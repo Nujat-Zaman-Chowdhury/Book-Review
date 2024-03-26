@@ -7,7 +7,7 @@ const ListedBooks = () => {
     
     const [tabIndex,setTabIndex] = useState(0);
   return (
-    <div className="max-w-7xl mx-auto py-4">
+    <div className="max-w-7xl mx-auto py-4 p-3 lg:p-0">
       <div className="bg-[#1313130D] w-full rounded-2xl h-[100px] flex justify-center items-center">
         <h4 className="font-workSans text-2xl font-bold">Books</h4>
       </div>

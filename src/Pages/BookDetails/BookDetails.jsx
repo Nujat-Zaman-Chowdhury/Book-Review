@@ -1,6 +1,9 @@
 import { useLoaderData, useParams } from 'react-router-dom';
-import {getBooks, savedBooks } from '../../Utils/LocalStorage';
+import { savedBooks } from '../../Utils/LocalStorage';
 import { useState } from 'react';
+// import { savedWishBooks } from '../../Utils/WishList';
+// import toast from 'react-hot-toast';
+
 
 
 
@@ -11,35 +14,27 @@ const BookDetails = () => {
     const book = books.find(book=> book.bookId === idInt);
     // console.log(book);
     
-    const [singleBook,setSingleBook] = useState([]);
+    const [readBook,setReadBook] = useState([]);
+    // const [wishListBook,setWishListBook] = useState([])
+    
 
 
     const handleRead = (book)=>{
-       setSingleBook(book);
+       
        savedBooks(book);
+       setReadBook(book);
        
     }
 
-    const handleWishList = ()=>{
-        const books = getBooks();
-        console.log(singleBook);
-        const isBookExist = books.find(book=>book.bookId === singleBook.bookId);
-        if(isBookExist){
-            alert('already read')
-        }
-        else{
-            alert('added into wishList')
-        }
-        
-        
-    
-    }
-    
-    
-
+    // const handleWishList = ()=>{
+    //      const books = localStorage.getItem('books')
+    //      console.log(books);
+         
+           
+    // }
     const {bookName,author,image,review,totalPages,rating,category,tags,publisher,yearOfPublishing } = book;
     return (
-        <div className='grid grid-cols-4 gap-8 max-w-7xl mx-auto py-4'>
+        <div className='grid grid-rows-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto py-4 p-3 lg:p-0'>
             <div className='col-span-2 bg-[#1313130D] rounded-2xl flex justify-center items-center'>
                 <img src={image} className='w-[425px] h-[564px] object-cover object-center' alt="" />
             </div>
@@ -78,7 +73,7 @@ const BookDetails = () => {
                 </div>
                 <div className="font-workSans flex items-center gap-4 mt-7">  
                 <button onClick={()=>handleRead(book)} className="btn font-workSans font-semibold text-[#131313] text-lg border-[#1313134D] bg-transparent">Read</button>
-                <button onClick={handleWishList}  className="btn font-workSans font-semibold text-white text-lg bg-[#50B1C9]">Wishlist</button>
+                <button onClick={()=>handleWishList(book)}  className="btn font-workSans font-semibold text-white text-lg bg-[#50B1C9]">Wishlist</button>
                 </div>
             </div>
         </div>
