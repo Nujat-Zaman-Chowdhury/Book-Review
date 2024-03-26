@@ -1,12 +1,11 @@
 import toast  from 'react-hot-toast';
 export const getBooks = () =>{
-    let readBooksList = [];
-    
+    let booksList = [];
     const storedBooks = localStorage.getItem('books');
     if(storedBooks){
-        readBooksList.push(JSON.parse(storedBooks));
+        booksList = JSON.parse(storedBooks);
     }
-    return readBooksList;
+    return booksList;
 }
 
 export const savedBooks = (book) =>{
@@ -17,6 +16,8 @@ export const savedBooks = (book) =>{
         localStorage.setItem('books',JSON.stringify(storedBooks))
         toast.success('Book added in the read list')
     }
-    
-}
+    else{
+       return toast.error('Already added in readlist');
+    }
 
+}

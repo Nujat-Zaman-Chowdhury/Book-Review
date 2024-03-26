@@ -1,24 +1,30 @@
-// import toast from "react-hot-toast";
+import toast  from 'react-hot-toast';
+export const getWishListBooks = () =>{
+    let wishListBooks = []
+    const storedBooks = localStorage.getItem('wish-list');
+    if(storedBooks){
+        wishListBooks = JSON.parse(storedBooks);
 
-// export const getWishBooks = () =>{
-//     let wishBooksList = [];
-    
-//     const storedWishBooks = localStorage.getItem('wish-books');
-//     if(storedWishBooks){
-//         wishBooksList.push(JSON.parse(storedWishBooks));
-        
+    }
+    return wishListBooks;
+}
 
-//     }
-//     return wishBooksList;
-// }
+export const savedWishListBooks = (book) =>{
+    const storedBooks = getWishListBooks();
+    const isExits = storedBooks.find(b=> b.bookId === book.bookId);
+    if(!isExits){
+        storedBooks.push(book);
+        localStorage.setItem('wish-list',JSON.stringify(storedBooks))
+        toast.success('Book added in the wish list')
+    }
+    else{
+       return toast.error('already added')
+    }
 
-// export const savedWishBooks = (book) =>{
-//     const storedBooks = getWishBooks();
-//     const isExits = storedBooks.find(b=> b.bookId === book.bookId);
-//     if(!isExits){
-//         storedBooks.push(book);
-//         localStorage.setItem('wish-books',JSON.stringify(storedBooks))
-//         toast.success('Book added to Wish List')
-//     }
-    
-// }
+}
+
+export const removeBooksFromWL = (book)=>{
+    let storedWLBooks = getWishListBooks();
+    const remainingWLBooks = storedWLBooks.filter(b=>b.bookId !== book.bookId);
+    localStorage.setItem('wish-list',JSON.stringify(remainingWLBooks));
+}

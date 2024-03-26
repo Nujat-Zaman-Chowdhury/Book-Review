@@ -1,9 +1,13 @@
+import { useEffect, useState } from "react";
+import { getBooks } from "../../Utils/LocalStorage";
 
 
 const ReadBooks = () => {
+    
+
     return (
         <div>
-            <h2>Reading</h2>
+           
         </div>
     );
 };

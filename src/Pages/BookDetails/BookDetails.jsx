@@ -1,8 +1,9 @@
 import { useLoaderData, useParams } from 'react-router-dom';
-import { savedBooks } from '../../Utils/LocalStorage';
+import { getBooks, savedBooks } from '../../Utils/LocalStorage';
 import { useState } from 'react';
-// import { savedWishBooks } from '../../Utils/WishList';
-// import toast from 'react-hot-toast';
+import { getWishListBooks, removeBooksFromWL, savedWishListBooks } from '../../Utils/WishList';
+import { IoMdSwap } from 'react-icons/io';
+import toast from 'react-hot-toast';
 
 
 
@@ -12,29 +13,27 @@ const BookDetails = () => {
     const {id} = useParams();
     const idInt = parseInt(id);
     const book = books.find(book=> book.bookId === idInt);
-    // console.log(book);
     
-    const [readBook,setReadBook] = useState([]);
-    // const [wishListBook,setWishListBook] = useState([])
-    
+    const [read,setRead] = useState(getBooks());
+    const [wishList,setWishList] = useState(getWishListBooks());
 
-
-    const handleRead = (book)=>{
-       
-       savedBooks(book);
-       setReadBook(book);
-       
+    const handleRead =(book) =>{
+        removeBooksFromWL(book);
+        savedBooks(book);
+    } 
+    const handleWishList = (book) =>{
+        const savedWLBooks = getWishListBooks();
+        if(savedWLBooks.find(b=>b.bookId === book.bookId))
+        {return toast.error('Already in read list')}
+        else{
+            savedWishListBooks(book);
+        }
     }
 
-    // const handleWishList = ()=>{
-    //      const books = localStorage.getItem('books')
-    //      console.log(books);
-         
-           
-    // }
+
     const {bookName,author,image,review,totalPages,rating,category,tags,publisher,yearOfPublishing } = book;
     return (
-        <div className='grid grid-rows-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto py-4 p-3 lg:p-0'>
+        <div className='grid lg:grid-cols-4 gap-8 max-w-7xl mx-auto py-4 p-3 lg:p-0'>
             <div className='col-span-2 bg-[#1313130D] rounded-2xl flex justify-center items-center'>
                 <img src={image} className='w-[425px] h-[564px] object-cover object-center' alt="" />
             </div>
