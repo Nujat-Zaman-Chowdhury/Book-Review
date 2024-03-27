@@ -1,27 +1,12 @@
 import {  useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link, Outlet } from "react-router-dom";
-import { getBooks, savedBooks } from "../../../Utils/LocalStorage";
+import { getBooks, handleSortby, savedBooks } from "../../../Utils/LocalStorage";
 
 
 
 const ListedBooks = () => {
   const [tabIndex,setTabIndex] = useState(0);
-
-    const [displayBooks,setDisplayBooks] = useState([]);
-
-    useEffect(()=>{
-        setDisplayBooks(getBooks())
-    },[])
-    
- 
-
-    const handleSortby =(filter)=>{
-      if(filter === 'rating'){
-       const sortBooks =  [...displayBooks].sort((a,b)=>b.rating - a.rating)
-        setDisplayBooks(sortBooks);
-      }
-    }
 
     return (
     <div className="max-w-7xl mx-auto py-4 p-3 lg:p-0">

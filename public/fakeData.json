@@ -1,0 +1,76 @@
+[
+    {
+      "id": 1,
+      "author": "Chinua Achebe",
+      "country": "Nigeria",
+      "imageLink": "https://i.ibb.co/d7CQGv6/images.jpg",
+      "language": "English",
+      "link": "https://en.wikipedia.org/wiki/Things_Fall_Apart\n",
+      "pages": 209,
+      "price": 120,
+      "title": "Things Fall Apart",
+      "year": 1958
+    },
+    {
+      "id": 2,
+      "author": "Hans Christian Andersen",
+      "country": "Denmark",
+      "imageLink": "https://i.ibb.co/S6ycdSK/fairytales.jpg",
+      "language": "Danish",
+      "link": "https://en.wikipedia.org/wiki/Fairy_Tales_Told_for_Children._First_Collection.\n",
+      "pages": 784,
+      "price": 60.25,
+      "title": "Fairy tales",
+      "year": 1836
+    },
+    {
+      "id": 3,
+      "author": "Dante Alighieri",
+      "country": "Italy",
+      "imageLink": "https://i.ibb.co/Q8BQwwd/pride.jpg",
+      "language": "Italian",
+      "link": "https://en.wikipedia.org/wiki/Divine_Comedy\n",
+      "pages": 928,
+      "price": 200,
+      "title": "Pride and Prejudice",
+      "year": 1315
+    },
+    {
+      "id": 4,
+      "author": "Donaldo Macedo",
+      "country": "Sumer and Akkadian Empire",
+      "imageLink": "https://i.ibb.co/Gdbt90g/Pedagogyofthe-Oppressed.png",
+      "language": "Akkadian",
+      "link": "https://en.wikipedia.org/wiki/Epic_of_Gilgamesh\n",
+      "pages": 160,
+      "title": "Pedagogy of the Oppressed",
+      "year": 1700,
+      "price": 100.75
+    },
+    {
+        "id": 5,
+        "title": "Your Passion",
+        "language": "English",
+        "description": "Paulo Coelho's philosophical novel follows Santiago, a shepherd boy, on his journey to discover his personal legend and the meaning of life.",
+        "price": 9.75,
+        "imageLink": "https://i.ibb.co/T0G0zSR/Your-Passion.jpg",
+        "author": "Paulo Coelho",
+        "genre": "Philosophical fiction",
+        "year": 1988,
+        "publisher": "HarperCollins"
+    },
+    {
+        
+            "id": 10,
+            "author": "Atul Gawande",
+            "country": "United States",
+            "imageLink": "https://i.ibb.co/R30R10g/Mortal.png",
+            "language": "English",
+            "link": "https://en.wikipedia.org/wiki/Being_Mortal\n",
+            "pages": 304,
+            "price": 66,
+            "title": "Being Mortal: Medicine and What Matters in the End",
+            "year": 2014
+          
+    }
+  ]

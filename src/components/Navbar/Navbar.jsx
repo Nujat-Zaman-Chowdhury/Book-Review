@@ -29,6 +29,7 @@ const Navbar = () => {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/listed-books">Listed Books</NavLink>
             <NavLink to="/pages-to-read">Pages to Read</NavLink>
+            <NavLink to="/featured">Featured</NavLink>
           </ul>
         </div>
         <a className="btn btn-ghost text-lg lg:text-2xl font-bold">Book Vibe</a>
@@ -38,6 +39,7 @@ const Navbar = () => {
           <NavLink to="/" className={({isActive})=> isActive? 'text-[#23BE0A] border border-[#23BE0A] py-3 px-5 rounded-md': 'text-[#131313CC] hover:bg-gray-300 py-3 px-5 rounded-md'}>Home</NavLink>
           <NavLink to="/listed-books"  className={({isActive})=> isActive? 'text-[#23BE0A] border border-[#23BE0A] py-3 px-5 rounded-md': 'text-[#131313CC] hover:bg-gray-300 py-3 px-5 rounded-md'}>Listed Books</NavLink>
           <NavLink to="/pages-to-read" className={({isActive})=> isActive? 'text-[#23BE0A] border border-[#23BE0A] py-3 px-5 rounded-md': 'text-[#131313CC] hover:bg-gray-300 py-3 px-5 rounded-md'}>Pages to Read</NavLink>
+          <NavLink to="/featured" className={({isActive})=> isActive? 'text-[#23BE0A] border border-[#23BE0A] py-3 px-5 rounded-md': 'text-[#131313CC] hover:bg-gray-300 py-3 px-5 rounded-md'}>Featured</NavLink>
         </ul>
       </div>
       <div className="navbar-end flex justify-center lg:justify-end lg:w-[50%] gap-4">

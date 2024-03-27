@@ -23,3 +23,13 @@ export const savedBooks = (book) =>{
     }
 
 }
+
+export const handleSortby =(filter)=>{
+    const books = getBooks();
+   
+    if(filter === 'rating'){
+      return books.slice().sort((a,b)=>b.rating - a.rating);
+      
+    }
+    return books;
+  }

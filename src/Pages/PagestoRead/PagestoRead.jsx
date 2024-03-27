@@ -8,13 +8,13 @@ const PagestoRead = () => {
 
     const {localData} = useLocalStorage();
     
-    // console.log(localData);
+    // console.log(books);
 
     const barChartData = [];
     localData.map(book=>{
         barChartData.push({
             "bookName" : book.bookName,
-            "totalPages":book.totalPages,
+            "totalPages":book.totalPages
         });
     });
 
@@ -33,17 +33,17 @@ const PagestoRead = () => {
         return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
       };
     return (
-        <div>
+      
             
-            <div className="w-full h-80 flex justify-center item">
+            <div  style={{ width: '100%', height: '400px' }}>
            
             <ResponsiveContainer>
                 <BarChart
                     data={barChartData}
                     margin={{
-                        top: 10,
+                        top: 20,
                         right: 30,
-                        left: 10,
+                        left: 20,
                         bottom: 5,
                     }}
                 >
@@ -58,7 +58,7 @@ const PagestoRead = () => {
                 </BarChart>
             </ResponsiveContainer> 
          </div>
-        </div>
+
     );
 };
 
