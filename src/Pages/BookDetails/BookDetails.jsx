@@ -33,18 +33,18 @@ const BookDetails = () => {
 
     const {bookName,author,image,review,totalPages,rating,category,tags,publisher,yearOfPublishing } = book;
     return (
-        <div className='grid lg:grid-cols-4 gap-8 max-w-7xl mx-auto py-4 p-3 lg:p-0'>
-            <div className='col-span-2 bg-[#1313130D] rounded-2xl flex justify-center items-center'>
-                <img src={image} className='w-[425px] h-[564px] object-cover object-center' alt="" />
+        <div className='grid lg:grid-cols-4 gap-8 max-w-7xl mx-auto py-4 p-3 shadow-lg my-2 lg:my-4'>
+            <div className='col-span-2 bg-[#1313130D] rounded-2xl flex justify-center items-center p-4'>
+                <img src={image} className='lg:h-[400px] object-cover object-center rounded-md' alt="" />
             </div>
             <div className='col-span-2'>
                 
-                <h1 className='text-[#131313] text-4xl font-bold font-playfair'>{bookName}</h1>
-                <p className='text-xl font-medium font-workSans text-[#131313CC] mt-4'>By : {author}</p>
+                <h1 className='text-[#131313] text-2xl lg:text-4xl font-bold font-playfair'>{bookName}</h1>
+                <p className='text-base lg:text-xl font-medium font-workSans text-[#131313CC] mt-4'>By : {author}</p>
                 
                 <hr className='mt-6 mb-4'/>
                 <div>
-                    <h4 className='text-xl font-medium font-workSans text-[#131313CC]'>{category}</h4>
+                    <h4 className='text-base lg:text-xl font-medium font-workSans text-[#131313CC]'>{category}</h4>
                 </div>
                 <hr className='mt-4 mb-6'/>
                 <p className='text-base text-[#131313] font-bold font-workSans'>Review : <span className='text-[#131313B2] font-medium'>{review}</span></p>
@@ -71,8 +71,8 @@ const BookDetails = () => {
                     </div>
                 </div>
                 <div className="font-workSans flex items-center gap-4 mt-7">  
-                <button onClick={()=>handleRead(book)} className="btn font-workSans font-semibold text-[#131313] text-lg border-[#1313134D] bg-transparent">Read</button>
-                <button onClick={()=>handleWishList(book)}  className="btn font-workSans font-semibold text-white text-lg bg-[#50B1C9]">Wishlist</button>
+                <button onClick={()=>handleRead(book)} className="btn font-workSans font-semibold text-[#131313] text-base lg:text-lg border-[#1313134D] bg-transparent">Read</button>
+                <button onClick={()=>handleWishList(book)}  className="btn font-workSans font-semibold text-white text-base lg:text-lg bg-[#50B1C9]">Wishlist</button>
                 </div>
             </div>
         </div>
