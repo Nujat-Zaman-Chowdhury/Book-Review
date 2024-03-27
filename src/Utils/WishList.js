@@ -18,7 +18,7 @@ export const savedWishListBooks = (book) =>{
         toast.success('Book added in the wish list')
     }
     else{
-       return toast.error('already added')
+       return toast.error('already added in the wish list')
     }
 
 }

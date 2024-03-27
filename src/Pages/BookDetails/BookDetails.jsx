@@ -14,16 +14,16 @@ const BookDetails = () => {
     const idInt = parseInt(id);
     const book = books.find(book=> book.bookId === idInt);
     
-    const [read,setRead] = useState(getBooks());
-    const [wishList,setWishList] = useState(getWishListBooks());
+    // const [read,setRead] = useState(getBooks());
+    // const [wishList,setWishList] = useState(getWishListBooks());
 
     const handleRead =(book) =>{
         removeBooksFromWL(book);
         savedBooks(book);
     } 
     const handleWishList = (book) =>{
-        const savedWLBooks = getWishListBooks();
-        if(savedWLBooks.find(b=>b.bookId === book.bookId))
+        const savedReadBooks = getBooks();
+        if(savedReadBooks.find(b=>b.bookId === book.bookId))
         {return toast.error('Already in read list')}
         else{
             savedWishListBooks(book);

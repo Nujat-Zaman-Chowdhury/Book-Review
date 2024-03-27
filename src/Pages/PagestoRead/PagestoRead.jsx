@@ -1,18 +1,26 @@
 import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, XAxis, YAxis } from "recharts";
+
+
+import useLocalStorage from "../../Hook/useLocalStorage";
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
 const PagestoRead = () => {
-    const barChartData = [
-        {"bookName": "The Great Gatsby","totalPages": 180},
-        {"bookName": "To Kill a Mockingbird","totalPages": 281},
-        {"bookName": "1984","totalPages": 328},
-        {"bookName": "The Catcher in the Rye","totalPages": 224},
-        {"bookName": "Pride and Prejudice","totalPages": 432},
-        {"bookName": "The Hobbit","totalPages": 310},
-        {"bookName": "The Road","totalPages": 287},
-        {"bookName": "Harry Potter and the Philosopher's Stone","totalPages": 309},
-        {"bookName": "The Hunger Games","totalPages": 374},
-    ]
+
+    const {localData} = useLocalStorage();
+    
+    // console.log(localData);
+
+    const barChartData = [];
+    localData.map(book=>{
+        barChartData.push({
+            "bookName" : book.bookName,
+            "totalPages":book.totalPages,
+        });
+    });
+
+    
+    
+    
     const getPath = (x, y, width, height) => {
         return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
         ${x + width / 2}, ${y}
@@ -25,14 +33,17 @@ const PagestoRead = () => {
         return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
       };
     return (
-        <div style={{ width: '100%', height: '400px' }}>
+        <div>
+            
+            <div className="w-full h-80 flex justify-center item">
+           
             <ResponsiveContainer>
                 <BarChart
                     data={barChartData}
                     margin={{
-                        top: 20,
+                        top: 10,
                         right: 30,
-                        left: 20,
+                        left: 10,
                         bottom: 5,
                     }}
                 >
@@ -45,7 +56,8 @@ const PagestoRead = () => {
                         ))}
                     </Bar>
                 </BarChart>
-            </ResponsiveContainer>
+            </ResponsiveContainer> 
+         </div>
         </div>
     );
 };

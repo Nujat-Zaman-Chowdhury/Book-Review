@@ -1,6 +1,7 @@
 import toast  from 'react-hot-toast';
 export const getBooks = () =>{
     let booksList = [];
+    
     const storedBooks = localStorage.getItem('books');
     if(storedBooks){
         booksList = JSON.parse(storedBooks);
