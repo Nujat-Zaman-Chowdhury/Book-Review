@@ -24,12 +24,16 @@ export const savedBooks = (book) =>{
 
 }
 
-export const handleSortby =(filter)=>{
+export const handleSortby = (filter) => {
     const books = getBooks();
-   
-    if(filter === 'rating'){
-      return books.slice().sort((a,b)=>b.rating - a.rating);
-      
+  
+    if (filter === "rating") {
+      return books.slice().sort((a, b) => b.rating - a.rating);
+    } else if (filter === "pages") {
+      return books.slice().sort((a, b) => b.totalPages - a.totalPages);
+    } else if (filter === "year") {
+      return books.slice().sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
     }
+  
     return books;
-  }
+  };

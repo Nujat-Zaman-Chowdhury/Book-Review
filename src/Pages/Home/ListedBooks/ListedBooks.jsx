@@ -1,12 +1,55 @@
-import {  useEffect, useState } from "react";
+import {  createContext, useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link, Outlet } from "react-router-dom";
 import { getBooks, handleSortby, savedBooks } from "../../../Utils/LocalStorage";
+
+import {getWishListBooks} from "../../../Utils/WishList"
 
 
 
 const ListedBooks = () => {
   const [tabIndex,setTabIndex] = useState(0);
+  const [readBooks,setReadBooks] = useState([]);
+  const [wishListBooks,setWishListBooks] = useState([])
+
+
+    useEffect(()=>{
+        const getStoredBooks = getBooks();
+        setReadBooks(getStoredBooks);
+
+        const getWLBooks = getWishListBooks();
+        setWishListBooks(getWLBooks);
+    },[])
+
+   const handleSortBy = (filter)=>{
+     const storedReadBooks = getBooks();
+      if(filter === 'rating'){
+      {
+        const sortedByRating = storedReadBooks.sort((a,b)=>b.rating - a.rating);
+        const sortedByRating2 = wishListBooks.sort((a,b)=>b.rating - a.rating);
+        setReadBooks(sortedByRating);
+        setWishListBooks(sortedByRating2)
+      }
+      }
+      else if(filter === 'pages'){
+        {
+          const sortedByPages = storedReadBooks.sort((a,b)=>b.totalPages - a.totalPages);
+          const sortedByPages2 = wishListBooks.sort((a,b)=>b.totalPages - a.totalPages);
+          setReadBooks(sortedByPages);
+          setWishListBooks(sortedByPages2);
+        }
+      }
+      else if(filter === 'year'){
+        {
+          const sortedByYear = storedReadBooks.sort((a,b)=>b.yearOfPublishing - a.yearOfPublishing);
+          const sortedByYear2 = wishListBooks.sort((a,b)=>b.yearOfPublishing - a.yearOfPublishing);
+          setReadBooks(sortedByYear);
+          setWishListBooks(sortedByYear2);
+        }
+      }
+   }
+
+    
 
     return (
     <div className="max-w-7xl mx-auto py-4 p-3 lg:p-0">
@@ -19,13 +62,13 @@ const ListedBooks = () => {
             Sort By <IoIosArrowDown />
           </summary>
           <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-            <li onClick={()=>handleSortby('rating')}>
+            <li onClick={()=>handleSortBy('rating')}>
               <a>Rating</a>
             </li>
-            <li>
+            <li onClick={()=>handleSortBy('pages')}>
               <a>Number of pages</a>
             </li>
-            <li>
+            <li onClick={()=>handleSortBy('year')}>
               <a>Published year</a>
             </li>
           </ul>
@@ -50,7 +93,9 @@ const ListedBooks = () => {
         </Link>
         
       </div>
-      <Outlet></Outlet>
+      
+      <Outlet context={[readBooks]}></Outlet>
+     
     </div>
   );
 };

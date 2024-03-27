@@ -1,17 +1,14 @@
-import { useEffect, useState } from "react";
-import { getBooks } from "../../Utils/LocalStorage";
+
 import { IoPeopleOutline } from "react-icons/io5";
 import { MdOutlineContactPage } from "react-icons/md";
 import { CiLocationOn } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
+
 
 const ReadBooks = () => {
     
-    const [books,setBooks]  = useState([]);
-    useEffect(()=>{
-        const getStoredBooks = getBooks()
-        setBooks(getStoredBooks);
-    },[])
+    const [books] = useOutletContext();
+    
     
     return (
         <div>

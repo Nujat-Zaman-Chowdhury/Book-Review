@@ -8,6 +8,7 @@ import BookDetails from "../Pages/BookDetails/BookDetails";
 import ReadBooks from "../components/ReadBooks.jsx/ReadBooks";
 import WishLists from "../components/WishLists.jsx/WishLists";
 import Featured from "../Pages/Featured/Featured";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 export const router = createBrowserRouter([
     {
@@ -49,7 +50,11 @@ export const router = createBrowserRouter([
           path: '/featured',
           element:<Featured></Featured>
 
-        }
+        },
+        {
+          path: '/contact-us',
+          element:<ContactUs></ContactUs>
+        },
       ]
     },
   ]);
