@@ -1,11 +1,12 @@
 import {  createContext, useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link, Outlet } from "react-router-dom";
-import { getBooks, handleSortby, savedBooks } from "../../../Utils/LocalStorage";
+import { getBooks } from "../../../Utils/LocalStorage";
 
 import {getWishListBooks} from "../../../Utils/WishList"
 
-
+export const ReadBookContext = createContext();
+export const WishListBookContext = createContext();
 
 const ListedBooks = () => {
   const [tabIndex,setTabIndex] = useState(0);
@@ -94,7 +95,11 @@ const ListedBooks = () => {
         
       </div>
       
-      <Outlet context={[readBooks]}></Outlet>
+      <ReadBookContext.Provider value={[readBooks]}>
+        <WishListBookContext.Provider value={[wishListBooks]}>
+          <Outlet></Outlet>
+        </WishListBookContext.Provider>
+      </ReadBookContext.Provider>
      
     </div>
   );

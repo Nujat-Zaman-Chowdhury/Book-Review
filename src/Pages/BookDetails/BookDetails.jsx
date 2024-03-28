@@ -1,7 +1,7 @@
 import { useLoaderData, useParams } from 'react-router-dom';
 import { getBooks, savedBooks } from '../../Utils/LocalStorage';
-import { useState } from 'react';
-import { getWishListBooks, removeBooksFromWL, savedWishListBooks } from '../../Utils/WishList';
+
+import {  removeBooksFromWL, savedWishListBooks } from '../../Utils/WishList';
 import { IoMdSwap } from 'react-icons/io';
 import toast from 'react-hot-toast';
 
@@ -14,12 +14,10 @@ const BookDetails = () => {
     const idInt = parseInt(id);
     const book = books.find(book=> book.bookId === idInt);
     
-    // const [read,setRead] = useState(getBooks());
-    // const [wishList,setWishList] = useState(getWishListBooks());
 
     const handleRead =(book) =>{
-        removeBooksFromWL(book);
         savedBooks(book);
+        removeBooksFromWL(book);
     } 
     const handleWishList = (book) =>{
         const savedReadBooks = getBooks();

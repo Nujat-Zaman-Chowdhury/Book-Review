@@ -2,18 +2,20 @@
 import { IoPeopleOutline } from "react-icons/io5";
 import { MdOutlineContactPage } from "react-icons/md";
 import { CiLocationOn } from "react-icons/ci";
-import { Link, useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ReadBookContext } from "../../Pages/Home/ListedBooks/ListedBooks";
 
 
 const ReadBooks = () => {
     
-    const [books] = useOutletContext();
+    const [readBooks] = useContext(ReadBookContext)
     
     
     return (
         <div>
            {
-            books.map(book=>(
+            readBooks.map(book=>(
         <div key={book.bookId} className="card grid grid-cols-1 lg:grid-cols-2 items-center bg-base-100 border border-[#13131326] mt-9 p-5 gap-5">
       <figure className="bg-[#F3F3F3]  rounded-lg p-6  h-full">
         <img className="w-[200px]"

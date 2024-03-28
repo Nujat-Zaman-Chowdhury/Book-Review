@@ -1,22 +1,18 @@
-import { useEffect, useState } from "react";
-import { getWishListBooks } from "../../Utils/WishList";
+import { useContext} from "react";
 import { IoPeopleOutline } from "react-icons/io5";
 import { MdOutlineContactPage } from "react-icons/md";
 import { CiLocationOn } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import { WishListBookContext } from "../../Pages/Home/ListedBooks/ListedBooks";
 
 const WishLists = () => {
-    const [books,setBooks]  = useState([]);
-    useEffect(()=>{
-        const getStoredBooks = getWishListBooks();
-        setBooks(getStoredBooks)
-    },[])
+    const [wishListBooks] = useContext(WishListBookContext)
 
     return (
         <div>
            <div>
            {
-            books.map(book=>(
+            wishListBooks.map(book=>(
                 <div key={book.bookId} className="card grid grid-cols-1 lg:grid-cols-2 items-center bg-base-100 border border-[#13131326] mt-9 p-5 gap-5">
                 <figure className="bg-[#F3F3F3]  rounded-lg p-6  h-full">
                   <img className="w-[200px]"
