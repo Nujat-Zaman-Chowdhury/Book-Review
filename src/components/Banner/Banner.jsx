@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import banner from '../../assets/banner.jpg'
 const Banner = () => {
   return (
-    <div className="hero bg-[#1313130D] rounded-3xl lg:max-w-7xl mx-auto">
+    <div className="hero bg-[#1313130D] rounded-3xl w-full lg:max-w-7xl mx-auto">
       <div className="hero-content flex-col lg:flex-row-reverse py-14">
         <img
           src={banner}

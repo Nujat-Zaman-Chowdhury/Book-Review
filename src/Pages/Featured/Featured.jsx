@@ -18,7 +18,7 @@ const Featured = () => {
       toast.success("added to cart");
     }
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="w-full lg:max-w-7xl mx-auto p-3">
       <h2 className="text-[#131313] font-bold text-4xl font-playfair text-center">
         Featured Books : {count}
       </h2>
