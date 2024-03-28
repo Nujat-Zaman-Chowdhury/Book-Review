@@ -5,10 +5,10 @@ const BookCard = ({ book }) => {
   const {bookId, bookName,author,image,review,totalPages,rating,category,tags } = book;
   return (
     <Link to={`/book/${bookId}`} className="card bg-base-100 border border-[#13131326] mt-9 p-5 cursor-pointer">
-      <figure className="bg-[#F3F3F3] h-[230px] rounded-lg">
-        <img className=""
+      <figure className="bg-[#F3F3F3] h-[300px] rounded-lg">
+        <img className="w-[134px] h-[200px] rounded-sm shadow-lg object-cover object-center"
           src={image}
-          alt="Shoes"
+          alt="book"
         />
       </figure>
       <div className="card-body">

@@ -62,7 +62,7 @@ const ListedBooks = () => {
           <summary className="m-1 btn bg-[#23BE0A] text-white text-lg font-semibold font-workSans">
             Sort By <IoIosArrowDown />
           </summary>
-          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+          <ul className="p-2 shadow  menu dropdown-content z-[1] bg-base-100 rounded-box w-52 bg-[#1313130D] font-workSans">
             <li onClick={()=>handleSortBy('rating')}>
               <a>Rating</a>
             </li>
@@ -70,7 +70,7 @@ const ListedBooks = () => {
               <a>Number of pages</a>
             </li>
             <li onClick={()=>handleSortBy('year')}>
-              <a>Published year</a>
+              <a>Publisher year</a>
             </li>
           </ul>
         </details>

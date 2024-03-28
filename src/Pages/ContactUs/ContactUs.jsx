@@ -2,8 +2,8 @@
 
 const ContactUs = () => {
     return (
-        <div className="max-w-7xl mx-auto mt-8">
-        <section className="py-6 bg-white text-gray-900 font-workSans rounded-lg shadow-md">
+        <div className="w-full lg:max-w-7xl mx-auto mt-5 lg:mt-8">
+        <section className="py-4 lg:py-6 bg-white text-gray-900 font-workSans rounded-lg shadow-md">
 	<div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
 		<div className="py-6 md:py-0 md:px-6">
 			<h1 className="text-4xl font-bold">Get in touch</h1>

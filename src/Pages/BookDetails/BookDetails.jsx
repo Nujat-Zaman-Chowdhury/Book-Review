@@ -2,7 +2,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import { getBooks, savedBooks } from '../../Utils/LocalStorage';
 
 import {  removeBooksFromWL, savedWishListBooks } from '../../Utils/WishList';
-import { IoMdSwap } from 'react-icons/io';
+
 import toast from 'react-hot-toast';
 
 
@@ -33,7 +33,7 @@ const BookDetails = () => {
     return (
         <div className='grid lg:grid-cols-4 gap-8 max-w-7xl mx-auto py-4 p-3 shadow-lg my-2 lg:my-4'>
             <div className='col-span-2 bg-[#1313130D] rounded-2xl flex justify-center items-center p-4'>
-                <img src={image} className='lg:h-[400px] object-cover object-center rounded-md' alt="" />
+                <img src={image} className='w-auto lg:w-[425px] h-[200px] lg:h-[588px] object-fill rounded-md' alt="" />
             </div>
             <div className='col-span-2'>
                 
@@ -48,8 +48,8 @@ const BookDetails = () => {
                 <p className='text-base text-[#131313] font-bold font-workSans'>Review : <span className='text-[#131313B2] font-medium'>{review}</span></p>
                 <div className="font-workSans flex items-center gap-3 font-workSans">
                  <h4 className='text-base text-[#131313] font-bold  my-7'>Tag</h4>   
-                <button className="btn py-1 px-4 bg-[#23BE0A0D] text-[#23BE0A] rounded-full border-0">{tags[0]}</button>
-                <button className="btn py-1 px-4 bg-[#23BE0A0D] text-[#23BE0A] rounded-full border-0">{tags[1]}</button>
+                <button className="btn py-1 px-4 bg-[#23BE0A0D] text-[#23BE0A] rounded-full border-0"># {tags[0]}</button>
+                <button className="btn py-1 px-4 bg-[#23BE0A0D] text-[#23BE0A] rounded-full border-0"># {tags[1]}</button>
                 </div>
                 <hr className='mt-4 mb-6'/>
                 <div className='flex'>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 
@@ -22,7 +22,7 @@ const Featured = () => {
       <h2 className="text-[#131313] font-bold text-4xl font-playfair text-center">
         Featured Books : {count}
       </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8 font-playfair">
         {
             featuredBooks.map(book=>((
                 <div key={book.id} className=" p-6 rounded-md shadow-md dark:bg-zinc-300-100 dark:text-gray-900 space-y-3 font-playfair">
@@ -31,8 +31,8 @@ const Featured = () => {
             <span className="block text-2xl font-medium tracking-widest uppercase text-zinc-900">{book.title}</span>
             <h2 className="text-xl font-semibold tracking-wide">{book.language}</h2>
         </div>
-        <p className="dark:text-gray-800 font-workSans">{book.author}</p>
-        <p className="dark:text-black font-workSans">Price: {book.price} Taka</p>
+        <p className="dark:text-gray-800 font-workSans"><span className="font-semibold text-black">Author:</span> {book.author}</p>
+        <p className="dark:text-black font-workSans"><span className="font-semibold text-black">Price:</span> {book.price} Taka</p>
         <button onClick={handleCount} className="btn bg-blue-900 bg-opacity-45 text-white btn-sm md:btn-md lg:btn-lg bg">Add to cart</button>
         </div>
             )))

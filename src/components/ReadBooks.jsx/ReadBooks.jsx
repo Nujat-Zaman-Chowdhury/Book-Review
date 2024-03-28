@@ -16,7 +16,7 @@ const ReadBooks = () => {
         <div>
            {
             readBooks.map(book=>(
-        <div key={book.bookId} className="card grid grid-cols-1 lg:grid-cols-2 items-center bg-base-100 border border-[#13131326] mt-9 gap-5">
+        <div key={book.bookId} className="card grid grid-cols-1 lg:grid-cols-2 items-center bg-base-100 border border-[#13131326] mt-9 p-4 gap-5">
       <figure className="bg-[#F3F3F3]  rounded-lg p-6  h-full">
         <img className="w-[200px]"
           src={book.image}
@@ -28,9 +28,9 @@ const ReadBooks = () => {
         <p className="font-workSans font-medium text-[#131313CC]">By: {book.author}</p>
         <div className="font-workSans flex flex-col lg:flex-row items-center gap-3">
         <h4 className='text-base text-[#131313] font-bold  my-4'>Tag</h4> 
-            <button className="btn py-1 px-4 bg-[#23BE0A0D] text-[#23BE0A] rounded-full border-0">{book.tags[0]}</button>
-            <button className="btn py-1 px-4 bg-[#23BE0A0D] text-[#23BE0A] rounded-full border-0">{book.tags[1]}</button>
-            <span className="flex flex-col lg:flex-row items-center"><CiLocationOn /> Year of Publishing: {book.yearOfPublishing}</span>
+            <button className="btn py-1 px-4 bg-[#23BE0A0D] text-[#23BE0A] rounded-full border-0"># {book.tags[0]}</button>
+            <button className="btn py-1 px-4 bg-[#23BE0A0D] text-[#23BE0A] rounded-full border-0"># {book.tags[1]}</button>
+            <span className="flex gap-2 flex-col lg:flex-row items-center"><CiLocationOn /> Year of Publishing: {book.yearOfPublishing}</span>
         </div>
         <div className="flex flex-col lg:flex-row text-base items-center gap-4 text-[#13131399] font-workSans mt-5 space-y-2 lg:space-y-0 mb-4">
             <div className="flex flex-col lg:flex-row gap-2 items-center">
