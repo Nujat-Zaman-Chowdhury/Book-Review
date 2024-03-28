@@ -16,7 +16,7 @@ const ReadBooks = () => {
         <div>
            {
             readBooks.map(book=>(
-        <div key={book.bookId} className="card grid grid-cols-1 lg:grid-cols-2 items-center bg-base-100 border border-[#13131326] mt-9 p-5 gap-5">
+        <div key={book.bookId} className="card grid grid-cols-1 lg:grid-cols-2 items-center bg-base-100 border border-[#13131326] mt-9 gap-5">
       <figure className="bg-[#F3F3F3]  rounded-lg p-6  h-full">
         <img className="w-[200px]"
           src={book.image}
