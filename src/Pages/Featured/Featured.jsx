@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-
-
 const Featured = () => {
 
     const [featuredBooks,setFeaturedBooks] = useState([]);

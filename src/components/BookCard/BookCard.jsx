@@ -1,8 +1,10 @@
 import { FaRegStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+
 const BookCard = ({ book }) => {
 
-  const {bookId, bookName,author,image,review,totalPages,rating,category,tags } = book;
+  const {bookId, bookName,author,image,rating,category,tags } = book;
   return (
     <Link to={`/book/${bookId}`} className="card bg-base-100 border border-[#13131326] mt-9 p-5 cursor-pointer">
       <figure className="bg-[#F3F3F3] h-[300px] rounded-lg">
@@ -28,4 +30,7 @@ const BookCard = ({ book }) => {
   );
 };
 
+BookCard.propTypes = {
+  book: PropTypes.object
+}
 export default BookCard;
