@@ -75,7 +75,7 @@ const ListedBooks = () => {
           </ul>
         </details>
       </div>
-      <div className="flex items-center p-4 -mx-4 overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap text-gray-100 ">
+      <div className="flex items-center p-4  overflow-y-hidden sm:justify-start flex-nowrap text-gray-100 ">
         <Link 
           to=""
             onClick={()=>setTabIndex(0)}
@@ -87,7 +87,7 @@ const ListedBooks = () => {
         <Link 
           to={`wishList`}
             onClick={()=>setTabIndex(1)}
-          className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2  ${tabIndex === 1 ? "border border-b-0 border-r-0" : "border-b border-r-0"}  text-[#13131380]  w-[1033px] `}
+          className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2  ${tabIndex === 1 ? "border border-b-0 border-r-0" : "border-b border-r-0"}  text-[#13131380]  lg:w-[1033px] `}
         >
          
           <span>Wishlist Books</span>

@@ -13,8 +13,8 @@ const BookCard = ({ book }) => {
           alt="book"
         />
       </figure>
-      <div className="card-body">
-        <div className="font-workSans flex items-center gap-3">
+      <div className="">
+        <div className="font-workSans flex items-center gap-3 mt-4">
             <button className="btn py-1 px-4 bg-[#23BE0A0D] text-[#23BE0A] rounded-full border-0">{tags[0]}</button>
             <button className="btn py-1 px-4 bg-[#23BE0A0D] text-[#23BE0A] rounded-full border-0">{tags[1]}</button>
         </div>

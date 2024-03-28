@@ -2,7 +2,7 @@
 
 Live site:
 
-- [BookVibe] (https://6604e6e1c35dec2cfe157921--assignment-8-nj.netlify.app/)
+- [BookVibe] (https://6604f0c2a0a0e8345e2baff3--assignment-8-nj.netlify.app/)
 
 Features and Characteristics
 
